@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import dayjs from "dayjs";
 
 
 const Calendar = () => {
     const [currentDate, setCalentDate] = useState (dayjs());
 
-    const startOfMonth = currentDate.start0f("month");
+    const startOfMonth = currentDate. startOf("month");
     const endOfMonth = currentDate.endOf("month");
     const startOfWeek = startOfMonth.startOf("week");
     const endOfWeek = endOfMonth.endOf("week");
@@ -16,7 +17,7 @@ const Calendar = () => {
     
     while (day.isBefore(endOfWeek, "day")){
         days.push(day);
-        day = days.add(1, "day");
+        day = day.add(1, "day");
     }
     return (
         <div className="max-w-md mx-auto p-4 bg-white shadow-lg rounded-lg">
